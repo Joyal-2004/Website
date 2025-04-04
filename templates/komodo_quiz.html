@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Komodo Quiz - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/kids_games.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/komodo_quiz.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="game-container">
+    <div class="container">
+      <div class="game-content">
+        <section class="quizIntroduction">
+          <h1>Test Your Komodo Hub Knowledge</h1>
+          <p>Below is an interactive quiz you can take to test your knowledge on wildlife conservation and our efforts to protect endangered species!</p>
+        </section>
+
+        <section class="quiz">
+          <div class="quizContents">
+            <!-- Left Column -->
+            <div class="column">
+              <div class="questionContents">
+                <p class="question">1. One of the main reasons for habitat loss is:</p>
+                <ul class="choices">
+                  <li><input type="radio" name="question1" value="a"> A) Natural disasters</li>
+                  <li><input type="radio" name="question1" value="b"> B) Deforestation</li>
+                  <li><input type="radio" name="question1" value="c"> C) Climate change</li>
+                  <li><input type="radio" name="question1" value="d"> D) Predation</li>
+                </ul>
+              </div>
+              <div class="questionContents">
+                <p class="question">2. Which of these following species is native to Indonesia?</p>
+                <ul class="choices">
+                  <li><input type="radio" name="question2" value="a"> A) African Elephant</li>
+                  <li><input type="radio" name="question2" value="b"> B) Polar Bear</li>
+                  <li><input type="radio" name="question2" value="c"> C) Komodo Dragon</li>
+                  <li><input type="radio" name="question2" value="d"> D) Kangaroo</li>
+                </ul>
+              </div>
+              <div class="questionContents">
+                <p class="question">3. What is one of our main goals here at Komodo Hub?</p>
+                <ul class="choices">
+                  <li><input type="radio" name="question3" value="a"> A) Expanding urban areas</li>
+                  <li><input type="radio" name="question3" value="b"> B) Identifying and protecting endangered species</li>
+                  <li><input type="radio" name="question3" value="c"> C) Promoting deforestation</li>
+                  <li><input type="radio" name="question3" value="d"> D) Increasing greenhouse gas emissions</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="column">
+              <div class="questionContents">
+                <p class="question">4. What is one of the main threats to Indonesia's endemic species?</p>
+                <ul class="choices">
+                  <li><input type="radio" name="question4" value="a"> A) Climate change</li>
+                  <li><input type="radio" name="question4" value="b"> B) Habitat loss and deforestation</li>
+                  <li><input type="radio" name="question4" value="c"> C) Overpopulation</li>
+                  <li><input type="radio" name="question4" value="d"> D) Lack of food sources</li>
+                </ul>
+              </div>
+              <div class="questionContents">
+                <p class="question">5. How can local communities contribute to conservation efforts?</p>
+                <ul class="choices">
+                  <li><input type="radio" name="question5" value="a"> A) Ignoring conservation laws</li>
+                  <li><input type="radio" name="question5" value="b"> B) Participating in habitat restoration</li>
+                  <li><input type="radio" name="question5" value="c"> C) Hunting endangered species</li>
+                  <li><input type="radio" name="question5" value="d"> D) Polluting local rivers</li>
+                </ul>
+              </div>
+              <div class="questionContents">
+                <p class="question">6. What is one way the public can get involved in Komodo Hub's mission?</p>
+                <ul class="choices">
+                  <li><input type="radio" name="question6" value="a"> A) Volunteering for conservation projects</li>
+                  <li><input type="radio" name="question6" value="b"> B) Disregarding environmental regulations</li>
+                  <li><input type="radio" name="question6" value="c"> C) Starting large-scale deforestation projects</li>
+                  <li><input type="radio" name="question6" value="d"> D) Avoiding participation in community activities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="submitQuiz()">Submit Quiz</button>
+          <div class="results" id="results"></div>
+          <div id="answersContainer"></div>
+        </section>
+        
+        <div class="back-to-games">
+          <a href="{{ url_for('kids_games') }}" class="btn secondary-btn">Back to Games</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/komodo_quiz.js') }}"></script>
+{% endblock %}
+

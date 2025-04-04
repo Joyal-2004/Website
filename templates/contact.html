@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+      <div class="container">
+          <div class="contact-hero-content">
+              <h1>Contact Us</h1>
+              <p>Get in touch with our team for any questions, feedback, or support</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section class="contact-info-section">
+      <div class="container">
+          <div class="contact-grid">
+              <div class="contact-details">
+                  <div class="section-header">
+                      <h2>Get In Touch</h2>
+                      <div class="section-divider"></div>
+                      <p>We're here to help and answer any questions you might have</p>
+                  </div>
+                  
+                  <div class="info-cards">
+                      <div class="info-card">
+                          <div class="info-icon">
+                              <i class="fas fa-envelope"></i>
+                          </div>
+                          <h3>Email Us</h3>
+                          <p>For general inquiries:</p>
+                          <a href="mailto:info@komodohub.org">info@komodohub.org</a>
+                          <p>For support:</p>
+                          <a href="mailto:support@komodohub.org">support@komodohub.org</a>
+                      </div>
+                      
+                      <div class="info-card">
+                          <div class="info-icon">
+                              <i class="fas fa-phone-alt"></i>
+                          </div>
+                          <h3>Call Us</h3>
+                          <p>Main Office:</p>
+                          <a href="tel:+15551234567">(555) 123-4567</a>
+                          <p>Support Line:</p>
+                          <a href="tel:+15557654321">(555) 765-4321</a>
+                      </div>
+                      
+                      <div class="info-card">
+                          <div class="info-icon">
+                              <i class="fas fa-map-marker-alt"></i>
+                          </div>
+                          <h3>Visit Us</h3>
+                          <p>123 Conservation Way</p>
+                          <p>Eco City, EC 12345</p>
+                          <p>United States</p>
+                      </div>
+                      
+                      <div class="info-card">
+                          <div class="info-icon">
+                              <i class="fas fa-clock"></i>
+                          </div>
+                          <h3>Office Hours</h3>
+                          <p>Monday - Friday:</p>
+                          <p>9:00 AM - 5:00 PM</p>
+                          <p>Weekends: Closed</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="contact-form-container">
+                  <div class="form-header">
+                      <h2>Send Us a Message</h2>
+                      <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                  </div>
+                  
+                  <form id="contact-form" action="{{ url_for('contact') }}" method="post">
+                      <div class="form-group">
+                          <label for="name">Your Name</label>
+                          <input type="text" id="name" name="name" class="form-control" required>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="email">Email Address</label>
+                          <input type="email" id="email" name="email" class="form-control" required>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="subject">Subject</label>
+                          <input type="text" id="subject" name="subject" class="form-control" required>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="inquiry-type">Inquiry Type</label>
+                          <select id="inquiry-type" name="inquiry_type" class="form-control">
+                              <option value="general">General Inquiry</option>
+                              <option value="support">Technical Support</option>
+                              <option value="partnership">Partnership Opportunity</option>
+                              <option value="feedback">Feedback</option>
+                              <option value="other">Other</option>
+                          </select>
+                      </div>
+                      
+                      <button type="submit" class="btn primary-btn">Send Message</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+      <div class="container">
+          <div class="section-header">
+              <h2>Frequently Asked Questions</h2>
+              <div class="section-divider"></div>
+              <p>Find quick answers to common questions</p>
+          </div>
+          
+          <div class="faq-container">
+              <div class="faq-item">
+                  <div class="faq-question">
+                      <h3>How can I get started with Komodo Hub?</h3>
+                      <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Getting started is easy! Simply sign up for an account on our platform, choose a plan that fits your needs, and you'll have immediate access to our resources and tools.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">
+                      <h3>Do you offer special pricing for educational institutions?</h3>
+                      <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Yes, we offer special discounted rates for schools, universities, and educational organizations. Please contact our sales team for more information about our educational pricing options.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">
+                      <h3>How can I contribute to conservation projects through Komodo Hub?</h3>
+                      <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                  </div>
+                  <div class="faq-answer">
+                      <p>There are many ways to contribute! You can participate in our citizen science initiatives, volunteer for conservation projects, or support our partner organizations. Once you're logged in, visit the "Get Involved" section to explore opportunities.</p>
+                  </div>
+              </div>
+              
+              <div class="faq-item">
+                  <div class="faq-question">
+                      <h3>Can I use Komodo Hub resources for my classroom?</h3>
+                      <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Our platform is designed with educators in mind. We offer curriculum-aligned resources, lesson plans, and interactive activities that can be easily integrated into your classroom teaching.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+      <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sus!4v1579090350945!5m2!1sen!2sus" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block title %}Kids Games - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/kids_games.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <!-- Hero Section -->
+  <section class="kids-hero">
+      <div class="container">
+          <div class="kids-hero-content">
+              <h1>Fun & Educational Games</h1>
+              <p>Learn about conservation through interactive games designed for young explorers</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="games-section">
+      <div class="container">
+          <div class="section-header">
+              <h2>Conservation Games</h2>
+              <div class="section-divider"></div>
+              <p>Explore these fun games to learn about wildlife and conservation</p>
+          </div>
+          
+          <div class="games-grid">
+              <div class="game-card">
+                  <div class="game-image">
+                      <img src="{{ url_for('static', filename='images/game1.jpg') }}" alt="Komodo Adventure">
+                      <div class="game-badge">Ages 6-10</div>
+                  </div>
+                  <div class="game-content">
+                      <h3>Komodo Wordle</h3>
+                      <p>Test your conservation vocabulary with this fun word-guessing game featuring Komodo dragon and conservation-related terms.</p>
+                      <div class="game-details">
+                          <span><i class="fas fa-gamepad"></i> Interactive Adventure</span>
+                          <span><i class="fas fa-star"></i> 4.8/5</span>
+                      </div>
+                      <a href="{{ url_for('komodo_wordle') }}" class="btn primary-btn">Play Now</a>
+                  </div>
+              </div>
+              
+              <div class="game-card">
+                  <div class="game-image">
+                      <img src="{{ url_for('static', filename='images/game2.jpg') }}" alt="Ecosystem Builder">
+                      <div class="game-badge">Ages 8-12</div>
+                  </div>
+                  <div class="game-content">
+                      <h3>Komodo Quiz</h3>
+                      <p>Challenge your knowledge about Komodo dragons and conservation with this interactive quiz featuring multiple difficulty levels.</p>
+                      <div class="game-details">
+                          <span><i class="fas fa-puzzle-piece"></i> Simulation Game</span>
+                          <span><i class="fas fa-star"></i> 4.9/5</span>
+                      </div>
+                      <a href="{{ url_for('komodo_quiz') }}" class="btn primary-btn">Play Now</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="coming-soon-section">
+              <div class="coming-soon-container">
+                  <div class="coming-soon-icon">
+                      <i class="fas fa-hourglass-half"></i>
+                  </div>
+                  <h3>More Games Coming Soon!</h3>
+                  <p>We're working on exciting new games to help kids learn about wildlife conservation in fun and interactive ways.</p>
+                  <p>Check back soon or sign up for updates to be the first to know when new games are released!</p>
+                  <a href="{{ url_for('signup') }}" class="btn secondary-btn">Get Updates</a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+      <div class="container">
+          <div class="section-header">
+              <h2>Benefits of Educational Games</h2>
+              <div class="section-divider"></div>
+          </div>
+          
+          <div class="benefits-grid">
+              <div class="benefit-card">
+                  <div class="benefit-icon">
+                      <i class="fas fa-brain"></i>
+                  </div>
+                  <h3>Learning Through Play</h3>
+                  <p>Games make learning fun and engaging, helping children retain information better than traditional methods.</p>
+              </div>
+              
+              <div class="benefit-card">
+                  <div class="benefit-icon">
+                      <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <h3>Problem-Solving Skills</h3>
+                  <p>Our games encourage critical thinking and creative problem-solving in conservation contexts.</p>
+              </div>
+              
+              <div class="benefit-card">
+                  <div class="benefit-icon">
+                      <i class="fas fa-heart"></i>
+                  </div>
+                  <h3>Building Empathy</h3>
+                  <p>Interactive experiences help children develop empathy for wildlife and understand the importance of conservation.</p>
+              </div>
+              
+              <div class="benefit-card">
+                  <div class="benefit-icon">
+                      <i class="fas fa-users"></i>
+                  </div>
+                  <h3>Family Engagement</h3>
+                  <p>Our games are designed for children but can be enjoyed by the whole family, creating opportunities for shared learning.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Parent Resources Section -->
+  <section class="parent-resources-section">
+      <div class="container">
+          <div class="resources-content">
+              <div class="resources-text">
+                  <h2>Resources for Parents & Educators</h2>
+                  <p>We provide additional resources to help you extend the learning experience beyond the games:</p>
+                  <ul>
+                      <li><i class="fas fa-file-alt"></i> Discussion guides to talk about conservation topics</li>
+                      <li><i class="fas fa-print"></i> Printable activities related to our games</li>
+                      <li><i class="fas fa-book"></i> Recommended reading lists about wildlife</li>
+                      <li><i class="fas fa-clipboard-list"></i> Curriculum connections for educators</li>
+                  </ul>
+                  <a href="{{ url_for('learning_resources') }}" class="btn primary-btn">Access Resources</a>
+              </div>
+              <div class="resources-image">
+                  <img src="{{ url_for('static', filename='images/parent-resources.jpg') }}" alt="Parent Resources">
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+      <div class="container">
+          <h2>Ready to Start Playing and Learning?</h2>
+          <p>Sign up for free access to our educational games and resources.</p>
+          <div class="cta-buttons">
+              <a href="{{ url_for('signup') }}" class="btn primary-btn">Sign Up Now</a>
+              <a href="{{ url_for('contact') }}" class="btn secondary-btn">Contact Us</a>
+          </div>
+      </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/kids_games.js') }}"></script>
+{% endblock %}
+

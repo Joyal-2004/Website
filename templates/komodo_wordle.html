@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Komodo Wordle - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/kids_games.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/komodo_wordle.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="game-container">
+    <div class="container">
+      <div class="game-content">
+        <h1>Komodo Hub Special Wordle</h1>
+        <p id="question">Can you guess the name of an endangered species in Indonesia?</p>
+        <div id="board"></div>
+        <div id="keyboard"></div>
+        <p id="message"></p>
+        
+        <div class="back-to-games">
+          <a href="{{ url_for('kids_games') }}" class="btn secondary-btn">Back to Games</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/komodo_wordle.js') }}"></script>
+{% endblock %}
+
