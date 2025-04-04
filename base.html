@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Komodo Hub{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  {% block styles %}{% endblock %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/donate-button.css') }}">
+</head>
+<body>
+  <header>
+      <div class="container">
+          <div class="logo">
+              <a href="{{ url_for('index') }}">
+                  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Komodo Hub Logo">
+              </a>
+          </div>
+          <nav>
+              <ul class="main-nav">
+                  <li><a href="{{ url_for('index') }}">Home</a></li>
+                  <li><a href="{{ url_for('about') }}">About Us</a></li>
+                  <li><a href="{{ url_for('features') }}">Features</a></li>
+                  <li class="dropdown">
+                      <a href="{{ url_for('resources') }}">Resources</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="{{ url_for('knowledge_base') }}">Knowledge Base</a></li>
+                          <li><a href="{{ url_for('learning_resources') }}">Learning Modules</a></li>
+                          <li><a href="{{ url_for('conservation_news') }}">Conservation News</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                  <li><a href="{{ url_for('kids_games') }}">Kids Games</a></li>
+                  <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+              </ul>
+          </nav>
+          <div class="auth-buttons">
+              <a href="{{ url_for('login') }}" class="btn login-btn">Log In</a>
+              <a href="{{ url_for('signup') }}" class="btn signup-btn">Sign Up</a>
+          </div>
+          <div class="mobile-menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-logo">
+                  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Komodo Hub Logo">
+                  <h3>Komodo Hub</h3>
+                  <p>Connecting communities to conservation through education and citizen science</p>
+              </div>
+              <div class="footer-links">
+                  <div class="footer-section">
+                      <h4>Quick Links</h4>
+                      <ul>
+                          <li><a href="{{ url_for('index') }}">Home</a></li>
+                          <li><a href="{{ url_for('about') }}">About Us</a></li>
+                          <li><a href="{{ url_for('features') }}">Features</a></li>
+                          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="footer-section">
+                      <h4>Resources</h4>
+                      <ul>
+                          <li><a href="{{ url_for('resources') }}">Knowledge Base</a></li>
+                          <li><a href="{{ url_for('learning_resources') }}">Learning Resources</a></li>
+                          <li><a href="{{ url_for('kids_games') }}">Kids Games</a></li>
+                          <li><a href="{{ url_for('reports_sightings') }}">Reports & Sightings</a></li>
+                      </ul>
+                  </div>
+                  <div class="footer-section">
+                      <h4>Legal</h4>
+                      <ul>
+                          <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                          <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="footer-social">
+                  <h4>Connect With Us</h4>
+                  <div class="social-icons">
+                      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2023 Komodo Hub. All rights reserved.</p>
+          </div>
+      </div>
+  </footer>
+
+  <!-- Donate Button -->
+  <div class="donate-button" id="donateButton">
+    <span>Donate</span>
+    <i class="fas fa-heart"></i>
+  </div>
+
+  <!-- Donate Modal -->
+  <div class="donate-modal" id="donateModal">
+    <div class="donate-modal-content">
+      <span class="donate-close">&times;</span>
+      <div class="donate-container">
+        <div class="donate-header">
+          <h2>Help Protect Animals in Need</h2>
+          <p>Your generosity helps provide food, shelter, and medical care to rescued animals.</p>
+        </div>
+        
+        <div class="donate-main">
+          <div class="donation-section">
+            <h3>Make a One-Off Donation</h3>
+            <form>
+              <div class="donation-options">
+                <input type="radio" id="oneTime10" name="oneTimeAmount" value="10">
+                <label for="oneTime10">£10</label>
+                <input type="radio" id="oneTime25" name="oneTimeAmount" value="25">
+                <label for="oneTime25">£25</label>
+                <input type="radio" id="oneTime50" name="oneTimeAmount" value="50">
+                <label for="oneTime50">£50</label>
+                <input type="radio" id="oneTime100" name="oneTimeAmount" value="100">
+                <label for="oneTime100">£100</label>
+              </div>
+              <button type="button" class="btn donate-btn" onclick="validateDonation('oneTimeAmount')">Donate Now</button>
+            </form>
+          </div>
+          
+          <div class="donation-section">
+            <h3>Give Monthly</h3>
+            <form>
+              <div class="donation-options">
+                <input type="radio" id="monthly5" name="monthlyAmount" value="5">
+                <label for="monthly5">£5/month</label>
+                <input type="radio" id="monthly10" name="monthlyAmount" value="10">
+                <label for="monthly10">£10/month</label>
+                <input type="radio" id="monthly20" name="monthlyAmount" value="20">
+                <label for="monthly20">£20/month</label>
+                <input type="radio" id="monthly50" name="monthlyAmount" value="50">
+                <label for="monthly50">£50/month</label>
+              </div>
+              <button type="button" class="btn donate-btn" onclick="validateDonation('monthlyAmount', true)">Donate Monthly</button>
+            </form>
+          </div>
+
+          <div class="donation-section">
+            <h3>Other Donations</h3>
+            <form>
+              <input type="text" id="otherAmount" placeholder="Enter custom amount" class="custom-amount">
+              <button type="button" class="btn donate-btn" onclick="handleOtherDonation()">Donate</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="donate-info">
+          <div class="did-you-know">
+            <h3>Did You Know?</h3>
+            <p>Over 1 million animals suffer from abuse every year.</p>
+            <p>Only 10% of stray animals in shelters find a permanent home.</p>
+            <p>Every £50 donation can provide food for 10 rescued animals.</p>
+          </div>
+
+          <div class="section-box">
+            <h3>Why Donate Monthly?</h3>
+            <p>Monthly donations provide ongoing support, ensuring rescued animals receive continuous care and medical attention.</p>
+          </div>
+          
+          <div class="section-box">
+            <h3>Why Every Penny Counts</h3>
+            <p>Every donation, no matter how small, contributes to food, shelter, and life-saving medical treatments for animals in need.</p>
+          </div>
+          
+          <div class="section-box">
+            <h3>Our Promise</h3>
+            <p>We ensure that your donations go directly towards rescuing, rehabilitating, and rehoming animals in need.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/donate.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
+

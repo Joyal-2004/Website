@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block title %}Reports & Sightings - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reports_sightings.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <!-- Hero Section -->
+  <section class="reports-hero">
+    <div class="container">
+      <div class="reports-hero-content">
+        <h1>Reports & Sightings</h1>
+        <p>Help us track and protect wildlife by reporting your sightings</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="reports-section">
+    <div class="container">
+      <div class="reports-container">
+        <!-- Left Column - Form -->
+        <div class="report-form-container">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fas fa-binoculars"></i>
+            </div>
+            <h2>Report a Sighting</h2>
+            <p>Your observations help us monitor wildlife populations and protect endangered species</p>
+          </div>
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          <form id="sightingForm" method="post" action="{{ url_for('reports_sightings') }}" enctype="multipart/form-data" class="sighting-form">
+            <div class="form-group">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="species">Species:</label>
+              <input type="text" id="species" name="species" class="form-control" required>
+              <div class="form-hint">If unsure, provide your best guess or a general description</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location" class="form-control" required>
+              <div class="form-hint">Be as specific as possible (e.g., GPS coordinates, landmark, address)</div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+              </div>
+              
+              <div class="form-group half">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" class="form-control">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="count">Number of Animals:</label>
+              <input type="number" id="count" name="count" class="form-control" min="1" value="1">
+            </div>
+            
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea id="description" name="description" class="form-control" rows="4" placeholder="Describe what you observed (behavior, condition, surroundings, etc.)"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="photo">Photo (if available):</label>
+              <div class="file-upload">
+                <input type="file" id="photo" name="photo" class="file-input" accept="image/*">
+                <div class="file-upload-label">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Choose a file or drag it here</span>
+                </div>
+                <div class="selected-file"></div>
+              </div>
+              <div class="form-hint">Photos help with species identification and verification</div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn primary-btn submit-btn">
+                <i class="fas fa-paper-plane"></i> Submit Report
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Right Column - Info -->
+        <div class="report-info-container">
+          <div class="info-box">
+            <h3>Why Report Sightings?</h3>
+            <p>Your wildlife sightings provide valuable data that helps us:</p>
+            <ul>
+              <li>Track population trends</li>
+              <li>Identify critical habitats</li>
+              <li>Monitor endangered species</li>
+              <li>Detect invasive species</li>
+              <li>Guide conservation efforts</li>
+            </ul>
+          </div>
+          
+          <div class="info-box">
+            <h3>Reporting Tips</h3>
+            <ul class="tips-list">
+              <li>
+                <i class="fas fa-camera"></i>
+                <div>
+                  <strong>Take clear photos</strong>
+                  <p>Photos from multiple angles help with identification</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Note exact location</strong>
+                  <p>Use GPS coordinates when possible</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-eye"></i>
+                <div>
+                  <strong>Record behavior</strong>
+                  <p>Note what the animal was doing when observed</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-ruler"></i>
+                <div>
+                  <strong>Estimate size</strong>
+                  <p>Compare to familiar objects if possible</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="info-box priority-species">
+            <h3>Priority Species</h3>
+            <p>We're especially interested in sightings of these species:</p>
+            <ul class="species-list">
+              <li>Komodo Dragon</li>
+              <li>Javan Rhinoceros</li>
+              <li>Sumatran Tiger</li>
+              <li>Bali Starling</li>
+              <li>Orangutan</li>
+              <li>Sumatran Elephant</li>
+            </ul>
+            <a href="#" class="learn-more">Learn more about these species</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Recent Sightings Section -->
+  <section class="recent-sightings-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent Sightings</h2>
+        <div class="section-divider"></div>
+        <p>Check out wildlife sightings reported by our community</p>
+      </div>
+      
+      <div class="sightings-grid">
+        <div class="sighting-card">
+          <div class="sighting-image">
+            <img src="{{ url_for('static', filename='images/sighting1.jpg') }}" alt="Komodo Dragon Sighting">
+          </div>
+          <div class="sighting-content">
+            <div class="sighting-meta">
+              <span class="species">Komodo Dragon</span>
+              <span class="date">May 15, 2023</span>
+            </div>
+            <h3>Komodo National Park</h3>
+            <p>Adult male observed basking on rocks near the beach. Approximately 2.5 meters in length.</p>
+            <div class="sighting-footer">
+              <span class="location"><i class="fas fa-map-marker-alt"></i> Rinca Island</span>
+              <span class="reporter"><i class="fas fa-user"></i> Reported by: John D.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sighting-card">
+          <div class="sighting-image">
+            <img src="{{ url_for('static', filename='images/sighting2.jpg') }}" alt="Bali Starling Sighting">
+          </div>
+          <div class="sighting-content">
+            <div class="sighting-meta">
+              <span class="species">Bali Starling</span>
+              <span class="date">April 28, 2023</span>
+            </div>
+            <h3>West Bali National Park</h3>
+            <p>Pair of Bali Starlings observed nesting in a tree cavity. Both adults appeared healthy.</p>
+            <div class="sighting-footer">
+              <span class="location"><i class="fas fa-map-marker-alt"></i> Prapat Agung Peninsula</span>
+              <span class="reporter"><i class="fas fa-user"></i> Reported by: Sarah M.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sighting-card">
+          <div class="sighting-image">
+            <img src="{{ url_for('static', filename='images/sighting3.jpg') }}" alt="Orangutan Sighting">
+          </div>
+          <div class="sighting-content">
+            <div class="sighting-meta">
+              <span class="species">Orangutan</span>
+              <span class="date">April 10, 2023</span>
+            </div>
+            <h3>Gunung Leuser National Park</h3>
+            <p>Female orangutan with young infant spotted in the canopy. Observed feeding on fruit for approximately 20 minutes.</p>
+            <div class="sighting-footer">
+              <span class="location"><i class="fas fa-map-marker-alt"></i> Bukit Lawang</span>
+              <span class="reporter"><i class="fas fa-user"></i> Reported by: Michael T.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-more-container">
+        <a href="#" class="btn secondary-btn">View More Sightings</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Join Our Citizen Science Community</h2>
+      <p>Sign up to track your sightings, receive updates, and contribute to conservation research.</p>
+      <div class="cta-buttons">
+        <a href="{{ url_for('signup') }}" class="btn primary-btn">Sign Up Now</a>
+        <a href="{{ url_for('contact') }}" class="btn secondary-btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/reports_sightings.js') }}"></script>
+{% endblock %}
+

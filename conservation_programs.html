@@ -1,0 +1,678 @@
+{% extends "base.html" %}
+
+{% block title %}Conservation Programs - Komodo Hub{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/conservation_programs.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Conservation Programs</h1>
+        <p>Join our global initiatives to protect endangered species and their habitats.</p>
+    </div>
+</section>
+
+<section class="programs-intro">
+    <div class="container">
+        <div class="intro-content">
+            <h2>Making a Difference Together</h2>
+            <p>Komodo Hub's conservation programs connect schools, communities, and individuals with real-world conservation efforts around the globe. By participating in these programs, you contribute directly to protecting endangered species and their habitats while gaining valuable knowledge and skills.</p>
+            <p>Each program is designed with specific conservation goals, educational components, and opportunities for hands-on involvement. Whether you're a school looking to engage students in meaningful environmental education, a community seeking to make a local impact, or an individual passionate about conservation, there's a program for you.</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured-programs">
+    <div class="container">
+        <h2>Featured Programs</h2>
+        <div class="programs-grid">
+            {% for program in programs %}
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="{{ url_for('static', filename=program.image) }}" alt="{{ program.name }}">
+                </div>
+                <div class="program-content">
+                    <h3>{{ program.name }}</h3>
+                    <p>{{ program.description }}</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            {% endfor %}
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="{{ url_for('static', filename='images/program4.jpg') }}" alt="Freshwater Conservation">
+                </div>
+                <div class="program-content">
+                    <h3>Freshwater Conservation</h3>
+                    <p>Protect rivers, lakes, and wetlands through monitoring, cleanup, and education initiatives.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="{{ url_for('static', filename='images/program5.jpg') }}" alt="Urban Wildlife Corridors">
+                </div>
+                <div class="program-content">
+                    <h3>Urban Wildlife Corridors</h3>
+                    <p>Create and maintain wildlife corridors in urban areas to support biodiversity in cities.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="{{ url_for('static', filename='images/program6.jpg') }}" alt="Endangered Pollinators">
+                </div>
+                <div class="program-content">
+                    <h3>Endangered Pollinators</h3>
+                    <p>Support bee, butterfly, and other pollinator populations through habitat creation and protection.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="program-categories">
+    <div class="container">
+        <h2>Program Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>Marine Conservation</h3>
+                <p>Programs focused on protecting ocean ecosystems, coral reefs, and marine species.</p>
+                <a href="#" class="category-link">View Marine Programs <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h3>Forest & Jungle</h3>
+                <p>Initiatives to protect and restore forest ecosystems and their biodiversity.</p>
+                <a href="#" class="category-link">View Forest Programs <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h3>Mountain & Highland</h3>
+                <p>Conservation efforts in mountain regions and high-altitude ecosystems.</p>
+                <a href="#" class="category-link">View Mountain Programs <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>Freshwater</h3>
+                <p>Programs dedicated to rivers, lakes, wetlands, and freshwater species.</p>
+                <a href="#" class="category-link">View Freshwater Programs <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-city"></i>
+                </div>
+                <h3>Urban Conservation</h3>
+                <p>Initiatives focused on biodiversity and green spaces in urban environments.</p>
+                <a href="#" class="category-link">View Urban Programs <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>Global Initiatives</h3>
+                <p>Cross-border conservation programs addressing international challenges.</p>
+                <a href="#" class="category-link">View Global Programs <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <div class="container">
+        <h2>How Our Programs Work</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Choose a Program</h3>
+                    <p>Browse our conservation programs and select one that aligns with your interests, location, or educational goals.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Register & Onboard</h3>
+                    <p>Complete the registration process and access program materials, training, and resources.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Participate & Contribute</h3>
+                    <p>Engage in program activities, collect data, implement conservation actions, and share your experiences.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Track Progress</h3>
+                    <p>Monitor your impact through our dashboard and see how your contributions are making a difference.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Share & Expand</h3>
+                    <p>Share your achievements, invite others to join, and expand your conservation efforts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="program-impact">
+    <div class="container">
+        <h2>Our Collective Impact</h2>
+        <div class="impact-stats">
+            <div class="stat-card">
+                <div class="stat-number">250+</div>
+                <div class="stat-label">Active Programs</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Participants</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">500,000+</div>
+                <div class="stat-label">Conservation Actions</div>
+            </div>
+        </div>
+        
+        <div class="impact-map">
+            <h3>Global Program Map</h3>
+            <div class="map-container">
+                <img src="{{ url_for('static', filename='images/program-map.jpg') }}" alt="Global Program Map">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="success-stories">
+    <div class="container">
+        <h2>Success Stories</h2>
+        <div class="stories-slider">
+            <div class="story-slide">
+                <div class="story-image">
+                    <img src="{{ url_for('static', filename='images/success1.jpg') }}" alt="Success Story">
+                </div>
+                <div class="story-content">
+                    <h3>Coral Reef Restoration in Thailand</h3>
+                    <p>A network of schools in Thailand has successfully restored over 5 acres of damaged coral reef through our Marine Conservation program. Students monitored water quality, planted coral fragments, and created awareness campaigns that led to reduced pollution in the area.</p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+            </div>
+            
+            <div class="story-slide">
+                <div class="story-image">
+                    <img src="{{ url_for('static', filename='images/success2.jpg') }}" alt="Success Story">
+                </div>
+                <div class="story-content">
+                    <h3>Urban Wildlife Corridor in Toronto</h3>
+                    <p>A community group in Toronto transformed abandoned urban spaces into a wildlife corridor connecting two parks. The project has documented a 40% increase in local bird species and created habitat for pollinators and small mammals.</p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-slide" aria-label="Previous story"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide" aria-label="Next story"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<section class="enrollment-section">
+    <div class="container">
+        <div class="enrollment-content">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join one of our conservation programs today and start contributing to global conservation efforts.</p>
+            <div class="enrollment-options">
+                <div class="enrollment-option">
+                    <h3>For Schools</h3>
+                    <p>Engage your students in meaningful conservation education and action.</p>
+                    <a href="{{ url_for('signup', plan='school') }}" class="btn btn-primary">Enroll School</a>
+                </div>
+                
+                <div class="enrollment-option">
+                    <h3>For Communities</h3>
+                    <p>Mobilize your community for local and global conservation impact.</p>
+                    <a href="{{ url_for('signup', plan='community') }}" class="btn btn-primary">Enroll Community</a>
+                </div>
+                
+                <div class="enrollment-option">
+                    <h3>For Individuals</h3>
+                    <p>Contribute your skills and passion to conservation projects worldwide.</p>
+                    <a href="{{ url_for('signup', plan='individual') }}" class="btn btn-primary">Join as Individual</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/conservation_programs.js') }}"></script>
+{% endblock %}
+
+```html file="templates/schools_communities.html" type="html"
+{% extends "base.html" %}
+
+{% block title %}Schools & Communities - Komodo Hub{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/schools_communities.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Schools & Communities</h1>
+        <p>Discover how educational institutions and community groups are making a difference through conservation.</p>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="container">
+        <div class="intro-content">
+            <h2>Connecting Education with Conservation</h2>
+            <p>Komodo Hub brings together schools and communities from around the world to collaborate on conservation efforts, share knowledge, and create meaningful change. Our platform provides the tools, resources, and connections needed to integrate conservation education into curricula and community initiatives.</p>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Schools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Communities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25,000+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="for-schools">
+    <div class="container">
+        <div class="section-header">
+            <h2>For Schools</h2>
+            <p>Empower your students with conservation knowledge and hands-on experience.</p>
+        </div>
+        
+        <div class="school-features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Curriculum Integration</h3>
+                <p>Incorporate conservation education into your existing curriculum with our standards-aligned resources.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Class Management</h3>
+                <p>Create and manage classes, assign activities, and track student progress through our intuitive dashboard.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Conservation Projects</h3>
+                <p>Engage students in real-world conservation projects that make a tangible difference in your community.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Connections</h3>
+                <p>Connect with schools around the world to collaborate on projects and share experiences.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Impact Tracking</h3>
+                <p>Measure and showcase your school's conservation impact with detailed analytics and reports.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Recognition Program</h3>
+                <p>Earn certificates and badges for your school's conservation achievements and milestones.</p>
+            </div>
+        </div>
+        
+        <div class="school-cta">
+            <h3>Ready to bring conservation education to your school?</h3>
+            <a href="{{ url_for('signup', plan='school') }}" class="btn btn-primary">Register Your School</a>
+        </div>
+    </div>
+</section>
+
+<section class="for-communities">
+    <div class="container">
+        <div class="section-header">
+            <h2>For Communities</h2>
+            <p>Mobilize your community for local and global conservation impact.</p>
+        </div>
+        
+        <div class="community-features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h3>Group Management</h3>
+                <p>Organize your community members, coordinate activities, and manage conservation initiatives.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>Local Projects</h3>
+                <p>Create and implement conservation projects tailored to your local environment and community needs.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3>Data Collection</h3>
+                <p>Collect and contribute valuable conservation data through our standardized reporting tools.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Community Forum</h3>
+                <p>Share ideas, ask questions, and collaborate with other community groups in our dedicated forums.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Awareness Campaigns</h3>
+                <p>Access tools and resources to create effective conservation awareness campaigns in your community.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Partnership Opportunities</h3>
+                <p>Connect with conservation organizations, schools, and other communities for collaborative projects.</p>
+            </div>
+        </div>
+        
+        <div class="community-cta">
+            <h3>Ready to mobilize your community for conservation?</h3>
+            <a href="{{ url_for('signup', plan='community') }}" class="btn btn-primary">Register Your Community</a>
+        </div>
+    </div>
+</section>
+
+<section class="showcase">
+    <div class="container">
+        <h2>Featured Schools & Communities</h2>
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="{{ url_for('static', filename='images/school1.jpg') }}" alt="Greenfield Academy">
+                </div>
+                <div class="showcase-content">
+                    <h3>Greenfield Academy</h3>
+                    <p class="showcase-location">Toronto, Canada</p>
+                    <p>A K-12 school that has integrated conservation education across all grade levels, with a focus on Great Lakes ecosystem protection.</p>
+                    <div class="showcase-achievements">
+                        <span class="achievement"><i class="fas fa-award"></i> 15 Conservation Projects</span>
+                        <span class="achievement"><i class="fas fa-users"></i> 450 Students Engaged</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="{{ url_for('static', filename='images/community1.jpg') }}" alt="Coastal Conservation Network">
+                </div>
+                <div class="showcase-content">
+                    <h3>Coastal Conservation Network</h3>
+                    <p class="showcase-location">Sydney, Australia</p>
+                    <p>A community group dedicated to protecting coastal ecosystems through beach cleanups, habitat restoration, and public education.</p>
+                    <div class="showcase-achievements">
+                        <span class="achievement"><i class="fas fa-award"></i> 28 Conservation Projects</span>
+                        <span class="achievement"><i class="fas fa-users"></i> 175 Members</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="{{ url_for('static', filename='images/school2.jpg') }}" alt="Nairobi Green School">
+                </div>
+                <div class="showcase-content">
+                    <h3>Nairobi Green School</h3>
+                    <p class="showcase-location">Nairobi, Kenya</p>
+                    <p>A secondary school that has developed an innovative conservation curriculum focused on African wildlife and habitat protection.</p>
+                    <div class="showcase-achievements">
+                        <span class="achievement"><i class="fas fa-award"></i> 12 Conservation Projects</span>
+                        <span class="achievement"><i class="fas fa-users"></i> 320 Students Engaged</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="{{ url_for('static', filename='images/community2.jpg') }}" alt="Rainforest Guardians">
+                </div>
+                <div class="showcase-content">
+                    <h3>Rainforest Guardians</h3>
+                    <p class="showcase-location">Manaus, Brazil</p>
+                    <p>A community organization working to protect the Amazon rainforest through sustainable practices, monitoring, and education.</p>
+                    <div class="showcase-achievements">
+                        <span class="achievement"><i class="fas fa-award"></i> 20 Conservation Projects</span>
+                        <span class="achievement"><i class="fas fa-users"></i> 130 Members</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="success-stories">
+    <div class="container">
+        <h2>Success Stories</h2>
+        <div class="stories-slider">
+            <div class="story-slide">
+                <div class="story-image">
+                    <img src="{{ url_for('static', filename='images/success-story1.jpg') }}" alt="Success Story">
+                </div>
+                <div class="story-content">
+                    <h3>From Classroom to Conservation: Westlake Elementary's Journey</h3>
+                    <p>When Westlake Elementary School in California joined Komodo Hub, they were looking for ways to make environmental education more engaging. Three years later, they've transformed their campus into a certified wildlife habitat, documented 45 local bird species, and inspired their entire community to take conservation action.</p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+            </div>
+            
+            <div class="story-slide">
+                <div class="story-image">
+                    <img src="{{ url_for('static', filename='images/success-story2.jpg') }}" alt="Success Story">
+                </div>
+                <div class="story-content">
+                    <h3>Community Power: How River Keepers Restored Local Watershed</h3>
+                    <p>The River Keepers community group started with just 10 members concerned about pollution in their local river. Using Komodo Hub's resources and network, they've grown to over 100 members, removed 15 tons of waste from the watershed, and successfully advocated for stronger local environmental protections.</p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-slide" aria-label="Previous story"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide" aria-label="Next story"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<section class="collaboration">
+    <div class="container">
+        <div class="collaboration-content">
+            <h2>School-Community Collaboration</h2>
+            <p>Some of our most successful conservation initiatives come from schools and communities working together. Komodo Hub facilitates these partnerships through our platform.</p>
+            
+            <div class="collaboration-features">
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="collab-text">
+                        <h3>Joint Projects</h3>
+                        <p>Create and manage conservation projects that bring together schools and community groups.</p>
+                    </div>
+                </div>
+                
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="collab-text">
+                        <h3>Resource Sharing</h3>
+                        <p>Share expertise, materials, and resources between educational institutions and community organizations.</p>
+                    </div>
+                </div>
+                
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="collab-text">
+                        <h3>Event Coordination</h3>
+                        <p>Plan and coordinate joint conservation events, workshops, and activities.</p>
+                    </div>
+                </div>
+                
+                <div class="collab-feature">
+                    <div class="collab-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="collab-text">
+                        <h3>Mentorship Programs</h3>
+                        <p>Connect students with community experts for guidance and learning opportunities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-secondary">Explore Collaboration Opportunities</a>
+        </div>
+    </div>
+</section>
+
+<section class="resources-section">
+    <div class="container">
+        <h2>Resources for Schools & Communities</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Curriculum Guides</h3>
+                <p>Standards-aligned curriculum resources for integrating conservation education.</p>
+                <a href="#" class="btn btn-outline">Access Guides</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Project Toolkits</h3>
+                <p>Step-by-step guides for implementing conservation projects in your area.</p>
+                <a href="#" class="btn btn-outline">View Toolkits</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Training Videos</h3>
+                <p>Instructional videos on conservation techniques, data collection, and more.</p>
+                <a href="#" class="btn btn-outline">Watch Videos</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3>Impact Assessment</h3>
+                <p>Tools and templates for measuring and reporting conservation impact.</p>
+                <a href="#" class="btn btn-outline">Access Tools</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="join-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Join Our Global Network</h2>
+            <p>Whether you're a school, community group, or both, there's a place for you in the Komodo Hub network. Register today to access resources, connect with others, and start making a difference.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('signup', plan='school') }}" class="btn btn-primary">Register School</a>
+                <a href="{{ url_for('signup', plan='community') }}" class="btn btn-primary">Register Community</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/schools_communities.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,395 @@
+{% extends 'base.html' %}
+
+{% block title %}Resources - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/resources.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- Hero Section -->
+    <section class="resources-hero">
+        <div class="container">
+            <div class="resources-hero-content">
+                <h1>Conservation Resources</h1>
+                <p>Access our comprehensive collection of educational materials, research, and conservation tools</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Overview Section -->
+    <section class="overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resources Overview</h2>
+                <div class="section-divider"></div>
+                <p>Explore our diverse range of conservation resources designed for educators, students, researchers, and conservation enthusiasts</p>
+            </div>
+            <div class="resources-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="knowledge-base">Knowledge Base</button>
+                    <button class="tab-btn" data-tab="learning-modules">Learning Modules</button>
+                    <button class="tab-btn" data-tab="conservation-news">Conservation News</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Base Section -->
+    <section id="knowledge-base" class="knowledge-base-section active-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Knowledge Base</h2>
+                <div class="section-divider"></div>
+                <p>Comprehensive information on conservation topics, species, and ecosystems</p>
+            </div>
+            
+            <div class="knowledge-categories">
+                <!-- Species Information Category -->
+                <div class="category-box">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-dragon"></i>
+                        </div>
+                        <h3>Species Information</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Detailed information about various species, their habitats, behaviors, and conservation status.</p>
+                        <div class="resource-list">
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Komodo Dragon Species Profile</h4>
+                                    <p>Comprehensive guide to Komodo dragons and their ecosystem</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Endangered Species Database</h4>
+                                    <p>Searchable database of endangered species worldwide</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Marine Life Encyclopedia</h4>
+                                    <p>Information on marine species and conservation</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Bird Species Identification Guide</h4>
+                                    <p>Visual guide to identifying bird species</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="{{ url_for('login') }}" class="btn primary-btn view-all-btn">Login to Access</a>
+                    </div>
+                </div>
+                
+                <!-- Ecosystems Category -->
+                <div class="category-box">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Ecosystems & Habitats</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Resources on different ecosystems, their importance, and conservation challenges.</p>
+                        <div class="resource-list">
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Coral Reef Ecosystems</h4>
+                                    <p>Guide to coral reef biodiversity and conservation</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Rainforest Conservation</h4>
+                                    <p>Information on rainforest ecosystems and threats</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Wetlands Importance</h4>
+                                    <p>The role of wetlands in biodiversity and climate</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Marine Protected Areas</h4>
+                                    <p>Guide to marine conservation zones worldwide</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="{{ url_for('login') }}" class="btn primary-btn view-all-btn">Login to Access</a>
+                    </div>
+                </div>
+                
+                <!-- Conservation Science Category -->
+                <div class="category-box">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Conservation Science</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Scientific research, methodologies, and findings related to conservation biology.</p>
+                        <div class="resource-list">
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Conservation Genetics</h4>
+                                    <p>Introduction to genetic approaches in conservation</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Population Monitoring Techniques</h4>
+                                    <p>Methods for tracking wildlife populations</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Habitat Restoration Science</h4>
+                                    <p>Scientific approaches to ecosystem restoration</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Climate Change Impact Studies</h4>
+                                    <p>Research on climate effects on biodiversity</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="{{ url_for('login') }}" class="btn primary-btn view-all-btn">Login to Access</a>
+                    </div>
+                </div>
+                
+                <!-- Conservation Strategies Category -->
+                <div class="category-box">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <h3>Conservation Strategies</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Approaches, methodologies, and best practices for conservation efforts.</p>
+                        <div class="resource-list">
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Community-Based Conservation</h4>
+                                    <p>Engaging local communities in conservation efforts</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Protected Area Management</h4>
+                                    <p>Strategies for effective conservation areas</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Sustainable Resource Use</h4>
+                                    <p>Balancing human needs with conservation</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item">
+                                <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="resource-info">
+                                    <h4>Wildlife Corridor Planning</h4>
+                                    <p>Creating connected habitats for wildlife</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="{{ url_for('login') }}" class="btn primary-btn view-all-btn">Login to Access</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Modules Section -->
+    <section id="learning-modules" class="learning-modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learning Modules</h2>
+                <div class="section-divider"></div>
+                <p>Structured educational content for different age groups and learning objectives</p>
+            </div>
+            
+            <div class="modules-preview">
+                <div class="module-card">
+                    <div class="module-image">
+                        <img src="{{ url_for('static', filename='images/module1.jpg') }}" alt="Elementary School Module">
+                        <div class="module-badge">K-5</div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Introduction to Biodiversity</h3>
+                        <p>A beginner-friendly module introducing young learners to the concept of biodiversity and its importance.</p>
+                        <div class="module-meta">
+                            <span><i class="fas fa-clock"></i> 4 Lessons</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                        <a href="{{ url_for('learning_resources') }}" class="btn primary-btn">View Module</a>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-image">
+                        <img src="{{ url_for('static', filename='images/module2.jpg') }}" alt="Middle School Module">
+                        <div class="module-badge">6-8</div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Ecosystems & Food Webs</h3>
+                        <p>Explore the interconnections between species and their environments through interactive food web activities and ecosystem studies.</p>
+                        <div class="module-meta">
+                            <span><i class="fas fa-clock"></i> 6 Lessons</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                        <a href="{{ url_for('learning_resources') }}" class="btn primary-btn">View Module</a>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-image">
+                        <img src="{{ url_for('static', filename='images/module3.jpg') }}" alt="High School Module">
+                        <div class="module-badge">9-12</div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Conservation Biology Fundamentals</h3>
+                        <p>A comprehensive introduction to conservation biology principles, challenges, and solutions for high school students.</p>
+                        <div class="module-meta">
+                            <span><i class="fas fa-clock"></i> 8 Lessons</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                        <a href="{{ url_for('learning_resources') }}" class="btn primary-btn">View Module</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-modules">
+                <a href="{{ url_for('learning_resources') }}" class="btn secondary-btn">View All Learning Modules</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conservation News Section -->
+    <section id="conservation-news" class="conservation-news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conservation News</h2>
+                <div class="section-divider"></div>
+                <p>Stay updated with the latest developments in conservation from around the world</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename='images/news1.jpg') }}" alt="Conservation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">May 15, 2023</div>
+                        <h3>New Protected Area Established in Indonesia</h3>
+                        <p>A new marine protected area has been established in Indonesia to safeguard coral reefs and marine biodiversity.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename='images/news2.jpg') }}" alt="Conservation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">April 28, 2023</div>
+                        <h3>Breakthrough in Komodo Dragon Conservation</h3>
+                        <p>Researchers have made significant progress in understanding Komodo dragon breeding patterns, aiding conservation efforts.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename='images/news3.jpg') }}" alt="Conservation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">April 10, 2023</div>
+                        <h3>Community-Led Conservation Success Story</h3>
+                        <p>A local community initiative has successfully restored a degraded forest ecosystem through collaborative efforts.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename='images/news4.jpg') }}" alt="Conservation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">March 25, 2023</div>
+                        <h3>New Species Discovered in Protected Area</h3>
+                        <p>Scientists have discovered a previously unknown species of amphibian in a recently established conservation zone.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename='images/news5.jpg') }}" alt="Conservation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">March 12, 2023</div>
+                        <h3>Youth Conservation Summit Announced</h3>
+                        <p>A global youth summit focused on conservation leadership will take place this summer with participants from over 50 countries.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename='images/news6.jpg') }}" alt="Conservation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">February 28, 2023</div>
+                        <h3>Innovative Conservation Technology Deployed</h3>
+                        <p>New drone and AI technology is being used to monitor wildlife populations in remote conservation areas with unprecedented accuracy.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Dive Deeper?</h2>
+            <p>Sign up for full access to all our conservation resources, learning modules, and tools.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('signup') }}" class="btn primary-btn">Sign Up Now</a>
+                <a href="{{ url_for('contact') }}" class="btn secondary-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/resources.js') }}"></script>
+{% endblock %}
+

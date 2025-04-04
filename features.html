@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+
+{% block title %}Features - Komodo Hub{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- Hero Section -->
+    <section class="features-hero">
+        <div class="container">
+            <div class="features-hero-content">
+                <h1>Platform Features</h1>
+                <p>Discover the tools and resources that make Komodo Hub a comprehensive conservation education platform</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Platform Overview</h2>
+                <div class="section-divider"></div>
+                <p>Komodo Hub offers a wide range of features designed to support conservation education and citizen science initiatives</p>
+            </div>
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>Our platform brings together educational resources, interactive tools, and community features to create a comprehensive ecosystem for conservation learning and engagement.</p>
+                    <p>Whether you're a student, educator, community leader, or conservation enthusiast, Komodo Hub provides the tools you need to learn, teach, and contribute to conservation efforts.</p>
+                </div>
+                <div class="overview-image">
+                    <img src="{{ url_for('static', filename='images/platform-overview.jpg') }}" alt="Platform Overview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Categories Section -->
+    <section class="features-categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Platform Features</h2>
+                <div class="section-divider"></div>
+                <p>Explore the key features that make Komodo Hub a powerful tool for conservation education</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Educational Resources Category -->
+                <div class="category-box">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Educational Resources</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Comprehensive learning modules for all ages</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Curriculum-aligned lesson plans for educators</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Interactive multimedia content</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Downloadable worksheets and activities</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Conservation research database</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Interactive Learning Category -->
+                <div class="category-box">
+                    <div class="category-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Interactive Learning</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Educational games for children</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Virtual field trips to conservation sites</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Interactive species identification tools</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Ecosystem simulations</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Quizzes and knowledge checks</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Citizen Science Category -->
+                <div class="category-box">
+                    <div class="category-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Citizen Science</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Wildlife sighting reporting tools</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Data collection templates</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Participation in global research projects</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Habitat monitoring guides</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Contribution tracking and recognition</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Community Engagement Category -->
+                <div class="category-box">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Engagement</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Discussion forums for conservation topics</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Project collaboration tools</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Event planning and management</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Community challenges and initiatives</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Expert Q&A sessions</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- School Tools Category -->
+                <div class="category-box">
+                    <div class="category-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>School Tools</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Classroom management features</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Student progress tracking</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Assignment creation and grading</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>School-to-school collaboration</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Teacher resources and training</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Conservation Programs Category -->
+                <div class="category-box">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Conservation Programs</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Featured conservation initiatives</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Volunteer opportunity listings</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Donation and fundraising tools</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Impact tracking and reporting</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Conservation success stories</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Benefits</h2>
+                <div class="section-divider"></div>
+                <p>Why schools, communities, and individuals choose Komodo Hub</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>For Educators</h3>
+                    <ul>
+                        <li>Ready-to-use curriculum resources</li>
+                        <li>Student engagement tools</li>
+                        <li>Professional development opportunities</li>
+                        <li>Cross-curricular integration</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>For Communities</h3>
+                    <ul>
+                        <li>Local conservation project support</li>
+                        <li>Community engagement tools</li>
+                        <li>Resource sharing capabilities</li>
+                        <li>Impact measurement</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>For Individuals</h3>
+                    <ul>
+                        <li>Personalized learning paths</li>
+                        <li>Contribution opportunities</li>
+                        <li>Connection with like-minded people</li>
+                        <li>Recognition for conservation efforts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Komodo Hub has transformed how we teach conservation in our school. The resources are engaging, and the citizen science projects give our students hands-on experience with real conservation work."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/testimonial1.jpg') }}" alt="Jane Smith">
+                        <div class="author-info">
+                            <h4>Jane Smith</h4>
+                            <p>Science Teacher, Greenfield Elementary</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a community leader, I've found Komodo Hub invaluable for organizing our local conservation initiatives. The platform makes it easy to coordinate volunteers, track progress, and share our successes."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/testimonial2.jpg') }}" alt="Robert Chen">
+                        <div class="author-info">
+                            <h4>Robert Chen</h4>
+                            <p>Community Organizer, Urban Greening Initiative</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-navigation">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Experience Komodo Hub?</h2>
+            <p>Join thousands of schools, communities, and individuals already using our platform.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('signup') }}" class="btn primary-btn">Sign Up Free</a>
+                <a href="{{ url_for('pricing') }}" class="btn secondary-btn">View Pricing</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/features.js') }}"></script>
+{% endblock %}
+
