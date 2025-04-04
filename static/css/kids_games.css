@@ -1,0 +1,370 @@
+/* Kids Games Page Styles */
+
+/* Hero Section */
+.kids-hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/kids-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.kids-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kids-hero h1 {
+  font-size: 3.7rem; /* Increased from 3.5rem */
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.kids-hero p {
+  font-size: 1.5rem; /* Increased from 1.4rem */
+  margin-bottom: 0;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.7rem; /* Increased from 2.5rem */
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background-color: #27ae60;
+  margin: 0 auto 20px;
+}
+
+.section-header p {
+  font-size: 1.3rem; /* Increased from 1.2rem */
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Games Section */
+.games-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.game-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.game-image {
+  height: 220px;
+  position: relative;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #27ae60;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.game-content {
+  padding: 25px;
+}
+
+.game-content h3 {
+  font-size: 1.7rem; /* Increased from 1.6rem */
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.game-content p {
+  font-size: 1.1rem; /* Increased font size */
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.game-details {
+  font-size: 1.05rem; /* Increased font size */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.game-details span {
+  display: flex;
+  align-items: center;
+}
+
+.game-details i {
+  color: #27ae60;
+  margin-right: 5px;
+}
+
+.game-content .btn {
+  width: 100%;
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+  margin-top: 30px;
+}
+
+.coming-soon-container {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px dashed #27ae60;
+}
+
+.coming-soon-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #27ae60;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+
+.coming-soon-icon i {
+  font-size: 35px;
+  color: white;
+}
+
+.coming-soon-container h3 {
+  font-size: 1.9rem; /* Increased from 1.8rem */
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.coming-soon-container p {
+  font-size: 1.1rem; /* Increased font size */
+  color: #666;
+  margin-bottom: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coming-soon-container .btn {
+  margin-top: 15px;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-card {
+  background-color: #e6fff0;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #27ae60;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.benefit-icon i {
+  font-size: 30px;
+  color: white;
+}
+
+.benefit-card h3 {
+  font-size: 1.5rem; /* Increased from 1.4rem */
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.benefit-card p {
+  font-size: 1.1rem; /* Increased font size */
+  color: #666;
+}
+
+/* Parent Resources Section */
+.parent-resources-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.resources-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.resources-text {
+  flex: 1;
+}
+
+.resources-text h2 {
+  font-size: 2.3rem; /* Increased from 2.2rem */
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.resources-text p {
+  font-size: 1.1rem; /* Increased font size */
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.resources-text ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.resources-text ul li {
+  font-size: 1.1rem; /* Increased font size */
+  margin-bottom: 12px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.resources-text ul li i {
+  color: #27ae60;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.resources-image {
+  flex: 1;
+}
+
+.resources-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Section */
+.cta-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/cta-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.7rem; /* Increased from 2.5rem */
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.cta-section p {
+  font-size: 1.3rem; /* Increased from 1.2rem */
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #fff;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .resources-content {
+    flex-direction: column;
+  }
+
+  .kids-hero h1 {
+    font-size: 3rem; /* Adjusted for tablet */
+  }
+
+  .kids-hero p {
+    font-size: 1.3rem; /* Adjusted for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .kids-hero h1 {
+    font-size: 2.4rem; /* Adjusted for mobile */
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem; /* Adjusted for mobile */
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+

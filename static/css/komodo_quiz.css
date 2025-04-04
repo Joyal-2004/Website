@@ -1,0 +1,172 @@
+.game-container {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+
+.game-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz Intro Section Styles */
+.quizIntroduction {
+  padding: 1.5em;
+  text-align: center;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.quizIntroduction h1 {
+  font-size: 2.2em;
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+.quizIntroduction p {
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+
+/* Quiz Section Styles */
+.quiz {
+  padding: 1em;
+}
+
+.quizContents {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.column {
+  flex: 1;
+}
+
+.questionContents {
+  margin-bottom: 2em;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.question {
+  font-size: 1.2em;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.choices {
+  list-style: none;
+  padding: 0;
+}
+
+.choices li {
+  margin-bottom: 10px;
+  font-size: 1.05em;
+  display: flex;
+  align-items: center;
+}
+
+.choices li input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Button Styles */
+button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background: #219653;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Result Styles */
+.results {
+  font-size: 1.3em;
+  margin: 25px 0;
+  text-align: center;
+  padding: 20px;
+  background-color: #e6fff0;
+  border-radius: 8px;
+  color: #27ae60;
+  font-weight: 600;
+}
+
+/* Answers Link Styles */
+#answersContainer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.answers-link {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 1.1em;
+  color: #27ae60;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.answers-link:hover {
+  text-decoration: underline;
+}
+
+.back-to-games {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .quizContents {
+    flex-direction: column;
+  }
+
+  .column {
+    margin: 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .game-content {
+    padding: 20px 15px;
+  }
+
+  .quizIntroduction {
+    padding: 15px;
+  }
+
+  .quizIntroduction h1 {
+    font-size: 1.8em;
+  }
+}
+

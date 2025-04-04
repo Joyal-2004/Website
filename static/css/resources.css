@@ -1,0 +1,564 @@
+/* Resources Page Styles */
+
+/* Hero Section */
+.resources-hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/resources-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.resources-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resources-hero h1 {
+  font-size: 3.7rem; /* Increased from 3.5rem */
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.resources-hero p {
+  font-size: 1.5rem; /* Increased from 1.4rem */
+  margin-bottom: 0;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.7rem; /* Increased from 2.5rem */
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background-color: #27ae60;
+  margin: 0 auto 20px;
+}
+
+.section-header p {
+  font-size: 1.3rem; /* Increased from 1.2rem */
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Overview Section */
+.overview-section {
+  padding: 80px 0 40px;
+  background-color: #fff;
+}
+
+/* Tabs Navigation */
+.resources-tabs {
+  margin-bottom: 40px;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  font-size: 1.2rem; /* Increased from 1.1rem */
+  padding: 15px 30px;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tab-btn:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #27ae60;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-btn.active {
+  color: #27ae60;
+}
+
+.tab-btn.active:after {
+  transform: scaleX(1);
+}
+
+/* Tab Sections */
+.active-section {
+  display: block;
+}
+
+#learning-modules,
+#conservation-news {
+  display: none;
+}
+
+/* Knowledge Base Section */
+.knowledge-base-section {
+  padding: 40px 0 80px;
+  background-color: #f9f9f9;
+}
+
+.knowledge-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
+}
+
+.category-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.category-header {
+  background-color: #27ae60;
+  color: white;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.category-icon i {
+  font-size: 30px;
+  color: white;
+}
+
+.category-header h3 {
+  margin: 0;
+  font-size: 1.7rem; /* Increased from 1.6rem */
+  color: white;
+}
+
+.category-content {
+  padding: 25px;
+}
+
+.category-content p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.resource-list {
+  margin-bottom: 25px;
+}
+
+.resource-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid #f1f1f1;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resource-item:last-child {
+  border-bottom: none;
+}
+
+.resource-item:hover {
+  background-color: #f9f9f9;
+}
+
+.resource-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #e6fff0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.resource-icon i {
+  font-size: 18px;
+  color: #27ae60;
+}
+
+.resource-info h4 {
+  margin: 0 0 5px;
+  font-size: 1.2rem; /* Increased from 1.1rem */
+  color: #2c3e50;
+}
+
+.resource-info p {
+  margin: 0;
+  font-size: 1rem; /* Increased from 0.9rem */
+  color: #666;
+}
+
+.view-all-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Learning Modules Section */
+.learning-modules-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.modules-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.module-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.module-image {
+  height: 200px;
+  position: relative;
+}
+
+.module-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.module-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #27ae60;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.module-content {
+  padding: 25px;
+}
+
+.module-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Increased from 1.4rem */
+}
+
+.module-content p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.module-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 1rem; /* Increased from 0.9rem */
+}
+
+.module-meta i {
+  color: #27ae60;
+  margin-right: 5px;
+}
+
+.view-all-modules {
+  text-align: center;
+}
+
+/* Conservation News Section */
+.conservation-news-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.news-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.news-image {
+  height: 200px;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 25px;
+}
+
+.news-date {
+  color: #27ae60;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.news-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Increased from 1.4rem */
+}
+
+.news-content p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.read-more {
+  color: #27ae60;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.read-more i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+  transform: translateX(5px);
+}
+
+.view-all-news {
+  text-align: center;
+}
+
+/* Resources Search Section */
+.resources-search-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.search-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-container h2 {
+  font-size: 2.2rem; /* Increased from 2rem */
+  margin-bottom: 10px;
+}
+
+.search-container p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.search-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 0 6px 6px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #219653;
+}
+
+.search-filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.filter {
+  flex: 1;
+  text-align: left;
+}
+
+.filter label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.05rem; /* Increased font size */
+}
+
+.filter select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem; /* Increased from 0.9rem */
+}
+
+/* CTA Section */
+.cta-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/cta-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.7rem; /* Increased from 2.5rem */
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.cta-section p {
+  font-size: 1.3rem; /* Increased from 1.2rem */
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #fff;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .knowledge-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-hero h1 {
+    font-size: 3rem; /* Adjusted for tablet */
+  }
+
+  .resources-hero p {
+    font-size: 1.3rem; /* Adjusted for tablet */
+  }
+
+  .search-filters {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resources-hero h1 {
+    font-size: 2.4rem; /* Adjusted for mobile */
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem; /* Adjusted for mobile */
+  }
+
+  .tabs-nav {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .tab-btn {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .tab-btn:after {
+    bottom: 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .modules-preview,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
